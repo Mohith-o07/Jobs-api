@@ -1,0 +1,260 @@
+{
+	"info": {
+		"_postman_id": "2f9060d8-5894-4074-877d-d85674675dc2",
+		"name": "Jobs_API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34055923"
+	},
+	"item": [
+		{
+			"name": "register",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const jsondata = pm.response.json()\r",
+							"pm.globals.set(\"accessToken\", jsondata.token);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Walter\",\r\n    \"email\":\"white@gmail.com\",\r\n    \"password\":\"12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/auth/register",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const jsondata = pm.response.json()\r",
+							"pm.globals.set(\"accessToken\", jsondata.token);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"ehrmantraut@gmail.com\",\r\n    \"password\":\"12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/auth/login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create job",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzQ3NDQ3NzE1ZDQ4ZTBhNWI4NzY1NjYiLCJuYW1lIjoiTWlrZSIsImlhdCI6MTczMzI5Nzc1MCwiZXhwIjoxNzMzMzAxMzUwfQ.k0VCOl6ixYcRbNlhFAhgg86qnqwi87RJ0X_niplxiL8",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"company\":\"IBM\",\r\n    \"position\":\"Backend Developer\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/createjob",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"createjob"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all jobs relative to a user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzQ3NDQ3NzE1ZDQ4ZTBhNWI4NzY1NjYiLCJuYW1lIjoiTWlrZSIsImlhdCI6MTczMzI5Nzc1MCwiZXhwIjoxNzMzMzAxMzUwfQ.k0VCOl6ixYcRbNlhFAhgg86qnqwi87RJ0X_niplxiL8",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{url}}/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a job",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/getjob/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"getjob",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update job",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"company\": \"Facebook\",\r\n    \"position\": \"Project Manager\",\r\n    \"status\":\"interview\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/updatejob/67500afe03fd4ef095a787a3",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"updatejob",
+						"67500afe03fd4ef095a787a3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a job",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/deletejob/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"deletejob",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
