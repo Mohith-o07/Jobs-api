@@ -103,7 +103,6 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzQ3NDQ3NzE1ZDQ4ZTBhNWI4NzY1NjYiLCJuYW1lIjoiTWlrZSIsImlhdCI6MTczMzI5Nzc1MCwiZXhwIjoxNzMzMzAxMzUwfQ.k0VCOl6ixYcRbNlhFAhgg86qnqwi87RJ0X_niplxiL8",
 						"type": "text",
 						"disabled": true
 					}
@@ -143,14 +142,6 @@
 					]
 				},
 				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzQ3NDQ3NzE1ZDQ4ZTBhNWI4NzY1NjYiLCJuYW1lIjoiTWlrZSIsImlhdCI6MTczMzI5Nzc1MCwiZXhwIjoxNzMzMzAxMzUwfQ.k0VCOl6ixYcRbNlhFAhgg86qnqwi87RJ0X_niplxiL8",
-						"type": "text",
-						"disabled": true
-					}
-				],
 				"url": {
 					"raw": "{{url}}/",
 					"host": [
