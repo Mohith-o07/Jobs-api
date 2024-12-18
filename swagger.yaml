@@ -4,7 +4,7 @@ info:
   contact: {}
   version: '1.0'
 servers:
-  - url: http://localhost:5001/v1/jobs
+  - url: https://jobs-api-gm39.onrender.com
     variables: {}
 paths:
   /auth/register:

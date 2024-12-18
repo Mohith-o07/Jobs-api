@@ -54,6 +54,6 @@ const port=process.env.PORT || 5000;
 mongoose.connect(dbURI)
 .then(res=>{
     app.listen(port);
-    console.log('connected to db!');
+    console.log(`connected to db on port ${port}`);
 })
 .catch(err=>console.log(err))
