@@ -47,7 +47,7 @@ paths:
           headers: {}
       deprecated: false
       security: []
-  /:
+  /jobs/:
     post:
       tags:
         - Jobs
@@ -77,7 +77,7 @@ paths:
           description: ''
           headers: {}
       deprecated: false
-  /{id}:
+  /jobs/{id}:
     parameters:
       - in: path
         name: id

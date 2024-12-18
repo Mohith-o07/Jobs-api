@@ -45,7 +45,7 @@ app.use('/api-docs',swaggerUI.serve,swaggerUI.setup(swaggerDoc));
 
 //routes
 app.use('/auth',authRouter);
-app.use('/',authenticateUser,jobsRouter);
+app.use('/jobs',authenticateUser,jobsRouter);
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
 
